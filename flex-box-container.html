@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aplicando flex box em um container</title>
+
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        /*define container flex*/
+        .container{
+            display: flex;
+            background-color: #CCC;
+            max-width: 360px;
+        }
+
+        /*direção no container*/
+        .em_linha{
+            flex-direction: row;
+        }
+        .em_linha_reversa{
+            flex-direction: row-reverse;
+        }
+        .em_coluna{
+            flex-direction: column;
+        }
+        .em_coluna_reversa{
+            flex-direction: column-reverse;
+        }
+
+        /*Se os itens do container podem ou não quebrar linha*/
+        .nao_quebra_linha{
+            flex-wrap: nowrap;
+        }
+        .pode_quebrar_linha{
+            flex-wrap: wrap;
+        }
+        .quebra_linha_na_direcao_contraria{
+            flex-wrap: wrap-reverse;
+        }
+
+        /*selectar que mescla as funcionalidades do flex-direcion e flex-wrap*/
+        .em_linha_sem_quebra {
+            flex-flow: row nowrap;
+        }
+        .em_coluna_semquebra {
+            flex-flow: column nowrap;
+        }
+        .em_linha_com_quebra {
+            flex-flow: row wrap;
+        }
+
+        /*alinhamento de itens, só funciona se os itens não ocuparem todo espaço*/
+        .alinha_ao_inicio{
+            justify-content:flex-start;
+        }
+        .alinha_ao_fim{
+            justify-content: flex-end;
+        }
+        .alinha_ao_centro{
+            justify-content: center;
+        }
+        .alinha_itens_em_espacamentos_iguais{/*utilizando todo conteúdo disponível*/
+            justify-content: space-between;
+        }
+        .alinha_itens_com_espacamentos_maiores_no_meio{
+            justify-content: space-around;
+        }
+
+        /*alinhamento de itens com align*/
+        .align_ao_inicio{
+            align-items: flex-start;
+        }
+        .align_ao_final{
+            align-items: flex-end;
+        }
+        .align_ao_centro{
+            align-items: center;
+        }
+        .align_de_acordo_com_a_tipografia{
+            align-items: baseline;
+        }
+
+        /*alinhamento de itens com mais de um linha de flex-itens, flex-wrap precisará ser wrap...*/
+        .align_content_inicio{
+            align-content: flex-start;
+        }
+        .align_content_fim{
+            align-content: flex-end;
+        }
+        .align_content_centro{
+            align-content:center;
+        }
+        .align_content_com_espacamento_iguais{
+            align-content: space-between;
+        }
+        .align_content_com_espacamento_maior_no_meio{
+            align-content: space-around;
+        }
+        .align_content_itens_crescem_igualmente_na_vertical{
+            align-content: stretch;
+        }
+
+
+
+
+        .item{
+            margin: 2px;
+            background-color: aqua;
+            border-width: 0.5px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+
+    <div class='container em_linha nao_quebra_linha align_de_acordo_com_a_tipografia'>
+        <div class="item">
+            <h1>loren ipsun 1</h1>
+            <p>Contrary to popular belief.</p>
+        </div>
+        <div class="item">
+            <h1>loren ipsun 2</h1>
+            <p>Lorem Ipsum is not simply random text.</p>
+        </div>
+        <div class="item">
+            <h1>loren ipsun 3</h1>
+            <p>Lorem Ipsum is not simply random text.</p>
+        </div>
+        <div class="item">
+            <h1>loren ipsun 4</h1>
+            <p>Contrary to popular belief.</p>
+        </div>
+    </div>
+    
+</body>
+</html>
